@@ -6,6 +6,7 @@
 - git fetch --prune - дополнительно удаляет мусорные ветки 
 - git pull - забрать все изменения
 - git checkout 1-add-project-structure - переключится на ветку
+- git checkout -b new_branch - создание локальной ветки
 - git branch - посмотреть все ветки
 
 ## SKILLS
