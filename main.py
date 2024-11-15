@@ -1,4 +1,4 @@
-"""Init wb telegram bot."""
+"""Init wildberries telegram bot."""
 
 
 if __name__ == "__main__":
