@@ -8,6 +8,7 @@
 - git checkout 1-add-project-structure - переключится на ветку
 - git checkout -b new_branch - создание локальной ветки
 - git branch - посмотреть все ветки
+- git rebase main
 
 ## SKILLS
 - SMART - задачи и цели
