@@ -12,3 +12,16 @@
 
 ## SKILLS
 - SMART - задачи и цели
+- CI/CD - devOps
+
+## PIP
+- pip freeze - список установленных пакетов
+- pip install lib_name
+- pip freeze > requirements.txt
+- pip install -r requirements.txt 
+
+## VENV
+- python -m venv venv
+- source venv/bin/activate
+- venv\Scripts\activate (WIN)
+- source venv/bin/deactivate
