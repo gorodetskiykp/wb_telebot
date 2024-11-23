@@ -13,6 +13,8 @@
 ## SKILLS
 - SMART - задачи и цели
 - CI/CD - devOps
+- Аренда VDS - выделенный сервер (linux)
+- SSH - защищенный канад передачи данных
 
 ## PIP
 - pip freeze - список установленных пакетов
@@ -25,3 +27,12 @@
 - source venv/bin/activate
 - venv\Scripts\activate (WIN)
 - source venv/bin/deactivate
+
+## Установка и запуск бота
+1. python -n venv venv
+2. venv\Scripts\activate или source venv/bin/activate
+3. pip install -r requirements.txt 
+4. Получить токен в BotFather
+5. Создать в корне проекта файл creds.py
+6. Создать в creds.py константу TELE_TOKEN = "наш телеграм-токен"
+7. Запустить бота: python main.py
