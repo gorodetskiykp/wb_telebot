@@ -1,4 +1,5 @@
 """Init wildberries telegram bot."""
+# pylint: disable=E0401
 
 import asyncio
 import logging

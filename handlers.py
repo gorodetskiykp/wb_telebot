@@ -1,4 +1,5 @@
 """Telegram bot handlers."""
+# pylint: disable=E0401
 
 from aiogram import Router
 from aiogram.types import Message
