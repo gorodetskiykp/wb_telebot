@@ -9,6 +9,7 @@
 - git checkout -b new_branch - создание локальной ветки
 - git branch - посмотреть все ветки
 - git rebase main
+- git stash / git stash apply
 
 ## SKILLS
 - SMART - задачи и цели
@@ -27,6 +28,13 @@
 - source venv/bin/activate
 - venv\Scripts\activate (WIN)
 - source venv/bin/deactivate
+
+## linux
+- ls -la - посмотреть файлы в текущем каталоге
+- history - посмотреть историю команд
+- history | grep ФИЛЬТР
+- history | grep python
+- !343 - выполнить 343-ю команду из истории
 
 ## Установка и запуск бота
 1. python -n venv venv
