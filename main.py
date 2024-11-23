@@ -13,6 +13,7 @@ from handlers import router
 
 
 async def main():
+    """Create and configure telegram bot."""
     bot = Bot(token=creds.TELE_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
     dp = Dispatcher(storage=MemoryStorage())
     dp.include_router(router)
