@@ -1,5 +1,5 @@
 """Telegram bot handlers."""
-# pylint: disable=E0401
+# pylint: disable=E0401,R0903
 
 from aiogram import Router
 from aiogram.types import Message
@@ -10,6 +10,7 @@ from tools.zodiac import fetch_zodiac_sign
 
 
 class ZodiacDate(StatesGroup):
+    """Zodiac case steps."""
     inputting_zodiac_date = State()
 
 
@@ -32,8 +33,9 @@ async def zodiac_handler(msg: Message, state: FSMContext):
 
 @router.message(ZodiacDate.inputting_zodiac_date)
 async def process_zopdiac_date(msg: Message, state: FSMContext):
+    """Fetch zodiac sign."""
     sign = fetch_zodiac_sign(msg.text)
-    await state.clear() 
+    await state.clear()
     if sign:
         await msg.answer(sign)
     else:

@@ -1,3 +1,6 @@
+"""Zodiac module."""
+# pylint: disable=E0401
+
 import datetime
 import re
 
@@ -16,5 +19,5 @@ def fetch_zodiac_sign(date: str):
             date_object = datetime.date(day=day, month=month, year=year)
         except ValueError:
             return None
-        return get_zodiac_sign(date_object) 
+        return get_zodiac_sign(date_object)
     return None
