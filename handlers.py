@@ -3,7 +3,15 @@
 
 from aiogram import Router
 from aiogram.types import Message
-from aiogram.filters import Command
+from aiogram.filters import Command, StateFilter
+from aiogram.fsm.context import FSMContext
+from aiogram.fsm.state import State, StatesGroup
+from tools.zodiac import fetch_zodiac_sign
+
+
+class ZodiacDate(StatesGroup):
+    inputting_zodiac_date = State()
+
 
 router = Router()
 
@@ -14,12 +22,22 @@ async def start_handler(msg: Message):
     await msg.answer("Привет! Я помогу тебе узнать твой ID, просто отправь мне любое сообщение")
 
 
-@router.message(Command("zodiak"))
-async def start_handler(msg: Message):
-    """Handling /zodiak command."""
-    await msg.answer("Введите дату рождения")
+@router.message(StateFilter(None), Command("zodiac"))
+async def zodiac_handler(msg: Message, state: FSMContext):
+    """Handling /zodiac command."""
+    await msg.answer("Введите дату рождения (в формате дд.мм.гггг)")
+    # добавить от пользователя ожидание msg
+    await state.set_state(ZodiacDate.inputting_zodiac_date)
 
-# TODO: добавить обработку даты + API календаря зодиака
+
+@router.message(ZodiacDate.inputting_zodiac_date)
+async def process_zopdiac_date(msg: Message, state: FSMContext):
+    sign = fetch_zodiac_sign(msg.text)
+    await state.clear() 
+    if sign:
+        await msg.answer(sign)
+    else:
+        await msg.answer("Что-то не так с датой")
 
 
 @router.message()
